@@ -14,7 +14,7 @@ class ProductRepoTest {
 
     @Test
     @DisplayName("Tests whether all products from the list are displayed")
-    public void testGetProducts(){
+    public void testList(){
         //GIVEN
         ProductRepo productRepo = new ProductRepo(List.of(
            new Product(1,"Roibois"),
