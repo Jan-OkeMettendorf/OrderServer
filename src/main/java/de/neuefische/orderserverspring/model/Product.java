@@ -9,6 +9,10 @@ public class Product {
 
     private int productId;
     private String productName;
+//
+//    Product product1 = new Product(1, "Roibois");
+//    Product product2 = new Product(2, "Vanilla");
+//    Product product3 = new Product(1, "Grey");
 
     // constructors
 

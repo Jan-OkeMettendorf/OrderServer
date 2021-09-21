@@ -12,32 +12,32 @@ import java.util.Objects;
 public class ProductService {
 
     // variables
-    private final ProductRepo productService;
+    private final ProductRepo productRepo;
 
     //constructors
     @Autowired
     public ProductService(ProductRepo productRepo) {
-        this.productService = productRepo;
+        this.productRepo = productRepo;
     }
 
     //methods
 
     public Product getProduct(int id){
-        if(productService.getProductById(id).isPresent()) {
-            return productService.getProductById(id).get();
+        if(productRepo.getProductById(id).isPresent()) {
+            return productRepo.getProductById(id).get();
         } else {
             throw new IllegalArgumentException("Product not found by ID: " + id);
         }
     }
 
     public List<Product> list(){
-        return productService.list();
+        return productRepo.list();
     }
 
     //getter/setter
 
-    public ProductRepo getProductService() {
-        return productService;
+    public ProductRepo getProductRepo() {
+        return productRepo;
     }
 
     //equals/hashCode
@@ -47,12 +47,12 @@ public class ProductService {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProductService that = (ProductService) o;
-        return Objects.equals(productService, that.productService);
+        return Objects.equals(productRepo, that.productRepo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productService);
+        return Objects.hash(productRepo);
     }
 
     // toString
@@ -60,7 +60,7 @@ public class ProductService {
     @Override
     public String toString() {
         return "ProductService{" +
-                "productRepo=" + productService +
+                "productRepo=" + productRepo +
                 '}';
     }
 }
