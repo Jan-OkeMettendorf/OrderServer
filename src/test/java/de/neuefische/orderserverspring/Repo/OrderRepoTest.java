@@ -16,7 +16,7 @@ class OrderRepoTest {
 
     @Test
     @DisplayName("Tests whether all products from the list are displayed")
-    public void list(){
+    public void testList(){
         //GIVEN
         OrderRepo orderRepo = new OrderRepo(List.of(
                 new Order(1,List.of(
@@ -41,7 +41,7 @@ class OrderRepoTest {
 
     @Test
     @DisplayName("Tests order list using an ID")
-    public void testList(){
+    public void testProductById(){
         //GIVEN
         OrderRepo orderRepo = new OrderRepo(List.of(
                 new Order(1,List.of(
