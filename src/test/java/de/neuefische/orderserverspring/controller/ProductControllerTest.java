@@ -38,8 +38,6 @@ class ProductControllerTest {
         //THEN
 
         assertEquals(expected,actual);
-
-
     }
 
 }

@@ -22,7 +22,6 @@ public class ProductController {
     }
 
     //methods
-
     @PutMapping
     public Product addNewProduct(@RequestBody Product product){
         productService.addNewProduct(product);

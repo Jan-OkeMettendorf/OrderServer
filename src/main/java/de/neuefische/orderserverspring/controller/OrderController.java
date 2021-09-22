@@ -23,10 +23,11 @@ public class OrderController {
     }
 
     //methods
-    @PutMapping
+    @PostMapping
     public Order newOrder(@RequestBody List<Integer> product){
         return orderService.addOrder(product);
     }
+
     @GetMapping
     public List<Order> list(){
         return orderService.list();
