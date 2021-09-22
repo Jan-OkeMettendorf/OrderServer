@@ -4,10 +4,7 @@ import de.neuefische.orderserverspring.model.Product;
 import org.springframework.stereotype.Repository;
 
 import javax.swing.text.html.Option;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @Repository
 public class ProductRepo {
@@ -50,13 +47,16 @@ public class ProductRepo {
 
     // Outputs a product based on the name
 
-    public Optional<Product> getProductByName(String productName){
+    public List<Product> getProductByName(String productName){
+        List<Product> newProductList = new ArrayList<>();
         for (Product product : productRepo) {
             if(product.getProductName().equals(productName)){
-                return Optional.of(product);
+                if (product.getProductName().toLowerCase().equals(productName.toLowerCase())) {
+                    newProductList.add(product);
+                }
             }
         }
-        return Optional.empty();
+        return newProductList;
     }
 
     // getter/setter

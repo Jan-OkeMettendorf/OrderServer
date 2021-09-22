@@ -34,12 +34,16 @@ public class ProductService {
         return productRepo.list();
     }
 
-    public Product getProductByName(String productName){
-        if(productRepo.getProductByName(productName).isPresent()){
-            return productRepo.getProductByName(productName).get();
-        } else {
-            throw new IllegalArgumentException("Product not found by name: " + productName);
-        }
+//    public Product getProductByName(String productName){
+//        if(productRepo.getProductByName(productName).isPresent()){
+//            return productRepo.getProductByName(productName).get();
+//        } else {
+//            throw new IllegalArgumentException("Product not found by name: " + productName);
+//        }
+//    }
+
+    public List<Product> getProductByName(String productName){
+        return productRepo.getProductByName(productName);
     }
 
     //getter/setter
