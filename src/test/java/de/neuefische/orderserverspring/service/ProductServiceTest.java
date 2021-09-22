@@ -24,7 +24,7 @@ class ProductServiceTest {
         ProductService productService = new ProductService(productRepo);
 
         //WHEN
-        Product actual = productService.getProduct(3);
+        Product actual = productService.getProductById(3);
         Product expected = new Product(3,"Grey");
 
         //THEN
@@ -44,7 +44,7 @@ class ProductServiceTest {
 
         //WHEN
         try {
-            productService.getProduct(4);
+            productService.getProductById(4);
         } catch(IllegalArgumentException e) {
             String actual = e.getMessage();
             String expected = "Product not found by ID: 4";

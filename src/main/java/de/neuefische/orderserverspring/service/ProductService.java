@@ -22,7 +22,7 @@ public class ProductService {
 
     //methods
 
-    public Product getProduct(int id){
+    public Product getProductById(int id){
         if(productRepo.getProductById(id).isPresent()) {
             return productRepo.getProductById(id).get();
         } else {
@@ -32,6 +32,14 @@ public class ProductService {
 
     public List<Product> list(){
         return productRepo.list();
+    }
+
+    public Product getProductByName(String productName){
+        if(productRepo.getProductByName(productName).isPresent()){
+            return productRepo.getProductByName(productName).get();
+        } else {
+            throw new IllegalArgumentException("Product not found by name: " + productName);
+        }
     }
 
     //getter/setter

@@ -33,4 +33,9 @@ public class ProductController {
         return product;
     }
 
+    @GetMapping(path = "{String}")
+    public Product getProductByName(@RequestParam String productName){
+        return productService.getProductByName(productName);
+    }
+
 }

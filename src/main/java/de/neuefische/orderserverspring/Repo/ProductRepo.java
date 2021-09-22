@@ -48,6 +48,17 @@ public class ProductRepo {
         return product;
     }
 
+    // Outputs a product based on the name
+
+    public Optional<Product> getProductByName(String productName){
+        for (Product product : productRepo) {
+            if(product.getProductName().equals(productName)){
+                return Optional.of(product);
+            }
+        }
+        return Optional.empty();
+    }
+
     // getter/setter
 
     public List<Product> getProducts() {
