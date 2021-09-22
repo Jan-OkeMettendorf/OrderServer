@@ -5,7 +5,6 @@ import de.neuefische.orderserverspring.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,14 +23,9 @@ public class ProductController {
 
     //methods
 
-//    @GetMapping
-//    public List<Product> list(){
-//        return productService.list();
-//    }
-
     @PutMapping
     public Product addNewProduct(@RequestBody Product product){
-        productService.addProduct(product);
+        productService.addNewProduct(product);
         return product;
     }
 

@@ -73,4 +73,30 @@ class ProductRepoTest {
 
     }
 
+    @Test
+    @DisplayName("tests the addition of a new product")
+    public void testAddNewProduct(){
+        //GIVEN
+        ProductRepo productRepo = new ProductRepo();
+        productRepo.addNewProduct(new Product(1,"Roibos"));
+        productRepo.addNewProduct(new Product(2,"Vanilla"));
+        productRepo.addNewProduct(new Product(3,"Grey"));
+
+        //WHEN
+        productRepo.addNewProduct(new Product(4,"Elderberry"));
+        List<Product> actual = productRepo.list();
+        List<Product> expected = new ArrayList<>(List.of(
+                new Product(1,"Roibos"),
+                new Product(2,"Vanilla"),
+                new Product(3,"Grey"),
+                new Product(4,"Elderberry")
+        ));
+
+        //THEN
+
+        assertEquals(expected,actual);
+
+
+    }
+
 }

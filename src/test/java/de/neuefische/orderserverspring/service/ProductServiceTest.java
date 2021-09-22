@@ -74,6 +74,31 @@ class ProductServiceTest {
 
         //THEN
         assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("tests the addition of a new product")
+    public void testAddNewProduct(){
+        //GIVEN
+        ProductRepo productRepo = new ProductRepo();
+        ProductService productService = new ProductService(productRepo);
+        productService.addNewProduct(new Product(1,"Roibos"));
+        productService.addNewProduct(new Product(2,"Vanilla"));
+        productService.addNewProduct(new Product(3,"Grey"));
+
+        //WHEN
+        productService.addNewProduct(new Product(4,"Elderberry"));
+        List<Product> actual = productService.list();
+        List<Product> expected = new ArrayList<>(List.of(
+                new Product(1,"Roibos"),
+                new Product(2,"Vanilla"),
+                new Product(3,"Grey"),
+                new Product(4,"Elderberry")
+        ));
+
+        //THEN
+
+        assertEquals(expected,actual);
 
 
     }

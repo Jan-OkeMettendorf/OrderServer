@@ -52,7 +52,7 @@ public class ProductService {
         return productRepo;
     }
 
-    public Product addProduct(Product product){
+    public Product addNewProduct(Product product){
         productRepo.addNewProduct(product);
         return product;
     }

@@ -19,6 +19,8 @@ public class ProductRepo {
         this.productRepo = products;
     }
 
+    public ProductRepo(){}
+
     // methods
 
     // Shows the list of all products
