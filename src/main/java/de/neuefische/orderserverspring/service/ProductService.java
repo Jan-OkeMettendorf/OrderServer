@@ -40,6 +40,11 @@ public class ProductService {
         return productRepo;
     }
 
+    public Product addProduct(Product product){
+        productRepo.addNewProduct(product);
+        return product;
+    }
+
     //equals/hashCode
 
     @Override
